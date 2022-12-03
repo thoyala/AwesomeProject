@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Menu from './components/week3/Menu';
+import MyIcon from './components/week3/MyIcon';
 import Signup from './components/week3/Signup';
 import Ex01 from './screens/week02/Ex01';
 import Ex02 from './screens/week02/Ex02';
