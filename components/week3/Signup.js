@@ -8,7 +8,7 @@ export default function Signup() {
             <TextInput placeholder='Input id' />
             <TextInput placeholder='Input email'/>
             <TextInput style = {{marginBottom : 20}} placeholder='Input address'/>
-            <Button title="Sign Up" color= "tomato" />
+            <Button title="Sign Up" color= "tomato" padding={20} />
             
         </View>    
     );
