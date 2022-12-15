@@ -8,7 +8,7 @@ export default function Menu() {
         <View style={{ borderWidth : 1, borderColor : "gray", borderRadius : 10, padding : 20 , margin : 20 }}>
             {/* ก้อนที่ 1 */}
             <View>
-                <Text>What're you looking for?</Text>
+                <TextInput>What're you looking for?</TextInput>
             </View>
             {/* ก้อนที่ 2 */}
             <View style = {{flexDirection : 'row' , justifyContent : 'space-around' , marginVertical : 10}}>
