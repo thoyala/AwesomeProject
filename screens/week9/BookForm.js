@@ -4,9 +4,10 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Button } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import BookStorage from "../../storage/BookStorage";
+import BookLaravel from "../../services/BookLaravel";
 
 export default function BookForm() {
-    const [id, setId] = useState("");
+    const [id, setId] = useState("_" + Math.random().toString(36).substring(2, 9));
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
@@ -14,8 +15,9 @@ export default function BookForm() {
     const { item } = route.params;
     const navigation = useNavigation();
     useLayoutEffect(() => { navigation.setOptions({ title: item ? "edit" : "create" }); }, [navigation]);
-    useEffect(() => {
+    useEffect(async() => {
       if (item) {
+        let book = await BookLaravel.getItemDetail(item);
         setId(item.id);
         setName(item.name);
         setPrice(item.price.toString());
@@ -27,7 +29,13 @@ export default function BookForm() {
         //A NEW ITEM
         let new_data = { id: id, name: name, price: price, image: image };
         //SAVE
-        await BookStorage.writeItem(new_data);
+        // await BookStorage.writeItem(new_data);
+        if(item){
+          await BookLaravel.updateItem(new_data);
+        }else{
+          await BookLaravel.storeItem(new_data);
+        }
+    
         //REDIRECT TO
         navigation.navigate("Book");
       };

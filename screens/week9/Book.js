@@ -5,6 +5,8 @@ import { FlatList } from "react-native";
 import { Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import BookStorage from "../../storage/BookStorage";
+import BookLaravel from "../../services/BookLaravel";
+
 
 export default function Book() {
     const [products, setProducts] = useState([
@@ -15,8 +17,10 @@ export default function Book() {
     const navigation = useNavigation();
     const loadBooks = async () => {
         setRefresh(true);
-        let products = await BookStorage.readItems();
-        setProducts(products);
+        // let p = await BookStorage.readItems();
+        let p = await BookLaravel.getItems();
+        console.log(p);
+        setProducts(p);
         setRefresh(false);
     };
 
