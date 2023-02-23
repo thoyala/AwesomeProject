@@ -72,7 +72,7 @@ export default function Receipt() {
                 <View style={{ borderBottomWidth: 1, padding: 10 }}>
                     <Text style={{ fontSize: 13, color: 'black' }}>มหาวิทยาลัย</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <FontAwesome name='building-columns' size={50} color="orange" />
+                        <FontAwesome name='twitter' size={50} color="orange" />
                         <Text style={{ fontSize: 20, color: 'black', marginLeft: 20 }}>วไลยอลงกรณ์</Text>
                     </View>
 

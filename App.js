@@ -33,8 +33,8 @@ export default function App() {
     <NavigationContainer>
       {/* <HomeStack /> */}
       {/* <BottomTab /> */}
-      {/* <RootStack /> */}
-      <Receipt />
+      <RootStack />
+      {/* <Receipt /> */}
     </NavigationContainer>
 
   );
