@@ -5,6 +5,7 @@ import Menu from './components/week3/Menu';
 import MyIcon from './components/week3/MyIcon';
 import Signup from './components/week3/Signup';
 import Section1 from './components/week4/Section1';
+import { AuthContextProvider } from './hooks/AuthContextProvider';
 import BottomTab from './navigations/BottomTab';
 import HomeStack from './navigations/HomeStack';
 import RootStack from './navigations/RootStack';
@@ -30,12 +31,14 @@ import Welcome from './screens/Welcome';
 export default function App() {
   return (
     // <Home />
-    <NavigationContainer>
-      {/* <HomeStack /> */}
-      {/* <BottomTab /> */}
-      <RootStack />
-      {/* <Receipt /> */}
-    </NavigationContainer>
+    <AuthContextProvider>
+      <NavigationContainer>
+        {/* <HomeStack /> */}
+        {/* <BottomTab /> */}
+        <RootStack />
+        {/* <Receipt /> */}
+      </NavigationContainer>
+    </AuthContextProvider>
 
   );
 }
